@@ -1,5 +1,5 @@
 const { prisma } = require('../config/prisma');
-const bcrypt = require('bcrypt');
+// const bcrypt = require('bcrypt');
 
 
 // Autentikasi Login

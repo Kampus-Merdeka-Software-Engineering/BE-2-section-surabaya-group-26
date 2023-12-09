@@ -38,13 +38,18 @@ async function createMatkul(kode, nama, sks, semester) {
 async function getMatkul() {
     try {
         const matkul = await prisma.matkul.findMany({
+            orderBy: [
+                {
+                    semester_id: 'asc'
+                }
+            ],
             include: {
                 semester: {
                     select: {
                         semester: true,
                     }
-                }
-            }
+                },
+            },
         });
         return matkul;
     } catch (error) {
